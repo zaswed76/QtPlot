@@ -1,0 +1,8 @@
+
+recursive-include qtplot/etc *.json
+recursive-include qtplot/gui/ui *.ui
+recursive-include qtplot/style *.css
+recursive-include qtplot/data *
+recursive-include qtplot/resource/icons *
+recursive-include qtplot/log *.log
+
