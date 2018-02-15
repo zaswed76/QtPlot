@@ -1,20 +1,9 @@
 
-import sys
-from PyQt5 import QtWidgets
-
-class QtGraph(QtWidgets.QFrame):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.plot_creator = PlotCreator()
-
-
-
-
 
 
 class PlotCreator():
-    def __init__(self):
-        pass
+    def __init__(self, canvas):
+        self.canvas = canvas
 
     def update_plot(self):
         pass
@@ -32,6 +21,7 @@ class PlotCreator():
         self.create_plot(data, plot_method)
 
 
+
     def get_control(self):
         return
 
@@ -39,10 +29,14 @@ class PlotCreator():
         return
 
     def plot_method(self, control):
-        return
+        return "plot_one_axis"
 
     def get_data(self, query_method):
         return
 
     def create_plot(self, data, plot_method):
-        pass
+        getattr(self, plot_method)(data)
+
+    def plot_one_axis(self, data):
+        canvas = self.canvas
+        canvas.plot(data)
