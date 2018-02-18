@@ -1,0 +1,32 @@
+actions
+=======
+
+Раелизация ползовательских действий: ::
+
+    создаём окно
+    plot_widget = mainplot.PlotWidget()
+    # создаём объкт контроллера
+    # plotactions - ссылка на модуль где определены пользовательские действия
+    controllers = control.Controllers(plotactions)
+    # передаём контроллер в окно
+    plot_widget.controllers = controllers
+    # создаём контролы
+    plot_widget.init_tools()
+
+
+
+class Controllers
+-----------------
+
+свойства
+~~~~~~~~
+* group
+* controls
+
+
+методы
+~~~~~~
+
+* set_app
+* register
+* register_group
