@@ -29,7 +29,7 @@ class Update(Action):
         self.args = args
 
     def run(self):
-        group = self.app.controllers.group["btn_group"]
+        group = self.app.controllers.groups["btn_group"]
         res = []
         for c in group.buttons():
             if c.isChecked():

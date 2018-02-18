@@ -27,9 +27,9 @@ def main():
 
     app = QtWidgets.QApplication(sys.argv)
 
-    # main_window = mainwindow.MainWindow()
-    # control_main_manager = control.ControllerManager(mainactions)
-    # main_window.control_manager = control_main_manager
+    main_window = mainwindow.MainWindow()
+    control_main_manager = control.Controllers(mainactions)
+    main_window.control_manager = control_main_manager
 
 
     # создаём окно
@@ -42,7 +42,7 @@ def main():
     # создаём контролы
     plot_widget.init_tools()
 
-    plot_widget.show()
+    main_window.show()
 
 
 

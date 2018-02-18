@@ -6,7 +6,7 @@ class Controllers(QtCore.QObject):
         super().__init__()
         self.actions_module = actions_module
         self._controls = {}
-        self._group = {}
+        self._groups = {}
 
     def set_app(self, app):
         self.app = app
@@ -17,13 +17,13 @@ class Controllers(QtCore.QObject):
 
 
     def register_group(self, group, signal, action, *args):
-        self._group[group.objectName()] = group
+        self._groups[group.objectName()] = group
         for control in group.buttons():
             self.register(control, signal, action, *args)
 
     @property
-    def group(self):
-        return self._group
+    def groups(self):
+        return self._groups
 
     @property
     def controls(self):
