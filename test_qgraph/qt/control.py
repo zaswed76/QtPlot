@@ -1,5 +1,6 @@
-import sys
-from PyQt5 import QtWidgets, QtCore
+
+from PyQt5 import QtCore
+
 
 class Controllers(QtCore.QObject):
     def __init__(self, actions_module):

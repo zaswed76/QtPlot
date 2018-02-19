@@ -29,7 +29,9 @@ def main():
 
     main_window = mainwindow.MainWindow()
     control_main_manager = control.Controllers(mainactions)
-    main_window.control_manager = control_main_manager
+    main_window.controllers = control_main_manager
+    main_window.init_menu()
+
 
 
     # создаём окно
@@ -41,6 +43,8 @@ def main():
     plot_widget.controllers = controllers
     # создаём контролы
     plot_widget.init_tools()
+
+    main_window.add_widget(plot_widget)
 
     main_window.show()
 
