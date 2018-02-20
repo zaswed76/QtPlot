@@ -1,9 +1,9 @@
 import sys
 from PyQt5 import QtWidgets, QtCore
 import random
-from test_qgraph.test import plot_widget
-from test_qgraph.plot import axis
-from test_qgraph import message_handler
+from qtplot.qt import canvas, message_handler
+from qtplot.plot import axis
+
 QtCore.qInstallMessageHandler(message_handler.qt_message_handler)
 
 class Tool(QtWidgets.QFrame):
@@ -31,7 +31,7 @@ class Widget(QtWidgets.QWidget):
         self.tool.setFixedWidth(70)
         self.tool.setStyleSheet("background-color: grey")
         self.box.addWidget(self.tool)
-        self.graph_widget = plot_widget.MatplotlibWidget()
+        self.graph_widget = canvas.Canvas()
         self.graph_widget.setStyleSheet("background-color: green")
         self.box.addWidget(self.graph_widget)
 
@@ -49,8 +49,17 @@ class Widget(QtWidgets.QWidget):
         pass
 
     def create_subplot(self):
+        x = list(range(1, 23))
+        y = [1,1, 3,4,7,8,4,9,11,13,12,14,12,7,8,5,9,9,9,5,4,3]
         self.graph_widget.clear()
-        a = self.graph_widget.set_axis(axis.Axis.OneAxis)
+        a, b, c = self.graph_widget.set_axis(axis.Axis.Three_axis)
+
+        random.shuffle(y)
+        a.bar(x, y, width=0.9, color="c", label="pro", picker=True, gid=0)
+        random.shuffle(y)
+        b.bar(x, y, width=0.9, color="c", label="pro", picker=True, gid=1)
+        random.shuffle(y)
+        c.bar(x, y, width=0.9, color="c", label="pro", picker=True, gid=2)
         self.canvas.draw()
 
     def create_subplot2(self):
@@ -61,6 +70,7 @@ class Widget(QtWidgets.QWidget):
     def create_subplot3(self):
         self.graph_widget.clear()
         a, b, s = self.graph_widget.set_axis(axis.Axis.Three_axis)
+
         self.canvas.draw()
 
     def update_plot(self):
@@ -91,6 +101,7 @@ class Widget(QtWidgets.QWidget):
 
     def on_pick(self, e):
         a = e.artist
+        print(a.get_gid())
         print(a.get_x() + a.get_width()/2)
 
 

@@ -6,17 +6,26 @@
 запуск приложения
 """
 
+import os
+
+ROOT = os.path.join(os.path.dirname(__file__))
+
+CSS_DIR = os.path.join(ROOT, "css")
+
 import sys
 from PyQt5 import QtWidgets, QtCore
 
-from qtplot.qt import base_plot_widget, message_handler
+from qtplot.qt import mainwidget, message_handler
+
 
 QtCore.qInstallMessageHandler(message_handler.qt_message_handler)
 
 def main():
+
     app = QtWidgets.QApplication(sys.argv)
-    # app.setStyleSheet(open('./etc/{0}.qss'.format('style'), "r").read())
-    main = base_plot_widget.BasePlotWidget()
+    css_path = os.path.join(CSS_DIR, "main.css")
+    app.setStyleSheet(open(css_path, "r").read())
+    main = mainwidget.MainWidget()
     main.show()
     sys.exit(app.exec_())
 
