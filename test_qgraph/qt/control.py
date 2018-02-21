@@ -3,8 +3,9 @@ from PyQt5 import QtCore
 
 
 class Controllers(QtCore.QObject):
-    def __init__(self, actions_module):
+    def __init__(self, app, actions_module):
         super().__init__()
+        self.app = app
         self.actions_module = actions_module
         self._controls = {}
         self._groups = {}

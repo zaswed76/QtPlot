@@ -2,11 +2,10 @@
 
 
 class PlotCreator():
-    def __init__(self, canvas):
-        self.canvas = canvas
+    def __init__(self, canvas=None):
+        self._canvas = canvas
 
-    def update_plot(self):
-        pass
+    def update_canvas(self):
         """
         получить данные контроллеров
         получить имя метода загрузки данных из базы
@@ -20,7 +19,13 @@ class PlotCreator():
         data = self.get_data(query_method)
         self.create_plot(data, plot_method)
 
+    @property
+    def canvas(self):
+        return self._canvas
 
+    @canvas.setter
+    def canvas(self, canvas):
+        self._canvas = canvas
 
     def get_control(self):
         return

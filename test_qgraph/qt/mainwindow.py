@@ -18,7 +18,7 @@ class MainWindow(QtWidgets.QMainWindow):
     @controllers.setter
     def controllers(self, control_m):
         self._controllers = control_m
-        self._controllers.set_app(self)
+        # self._controllers.set_app(self)
 
     def add_widget(self, widget):
         self.stack.addWidget(widget)

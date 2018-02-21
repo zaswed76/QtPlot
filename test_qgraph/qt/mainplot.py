@@ -31,7 +31,7 @@ class PlotWidget(QtWidgets.QWidget):
     @controllers.setter
     def controllers(self, control_m):
         self._controllers = control_m
-        self._controllers.set_app(self)
+        # self._controllers.set_app(self)
 
     def init_tools(self):
         group_btn = QtWidgets.QButtonGroup()

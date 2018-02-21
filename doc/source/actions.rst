@@ -22,7 +22,7 @@ actions
 
 зарегистрировать контрол: ::
 
-   self.controllers.register_group(group_btn, "clicked", "Update", 5, 7)
+   self.controllers.register(btn, "clicked", "Update", 5, 7)
 
 зарегистрировать группу контролов: ::
 
@@ -31,15 +31,17 @@ actions
 class Controllers
 -----------------
 
-свойства
-~~~~~~~~
-* groups --> dict(name_group=group: QtWidgets.QButtonGroup)
-* controls --> dict(name_control=control: QAbstractButton *)
-
-
 методы
 ~~~~~~
+
+* __init__(self, app, actions_module):
+
+   actions_module - ссылка на модуль где определены пользовательские действия
+
+   app - ссылка на виджет в который устаналиваем контроллет
 
 * set_app
 * register
 * register_group
+* groups --> dict(name_group=group: QtWidgets.QButtonGroup)
+* controls --> dict(name_control=control: QAbstractButton *)

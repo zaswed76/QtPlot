@@ -28,7 +28,7 @@ def main():
     app = QtWidgets.QApplication(sys.argv)
 
     main_window = mainwindow.MainWindow()
-    control_main_manager = control.Controllers(mainactions)
+    control_main_manager = control.Controllers(main_window, mainactions)
     main_window.controllers = control_main_manager
     main_window.init_menu()
 
@@ -38,7 +38,7 @@ def main():
     plot_widget = mainplot.PlotWidget()
     # создаём объкт контроллера
     # plotactions - ссылка на модуль где определены пользовательские действия
-    controllers = control.Controllers(plotactions)
+    controllers = control.Controllers(plot_widget, plotactions)
     # передаём контроллер в окно
     plot_widget.controllers = controllers
     # создаём контролы

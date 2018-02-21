@@ -1,13 +1,16 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="python">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>actions &#8212; Qtplot  documentation</title>
+    
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -25,7 +28,7 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="components" href="components.html" /> 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -60,10 +63,10 @@
 </pre></div>
 </div>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="_static/controllers.jpeg"><img alt="_static/controllers.jpeg" src="_static/controllers.jpeg" style="width: 343.7px; height: 213.5px;" /></a>
+<a class="reference internal image-reference" href="_images/controllers.jpeg"><img alt="_images/controllers.jpeg" src="_images/controllers.jpeg" style="width: 343.7px; height: 213.5px;" /></a>
 </div>
 <p>зарегистрировать контрол:</p>
-<div class="highlight-default"><div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">controllers</span><span class="o">.</span><span class="n">register_group</span><span class="p">(</span><span class="n">group_btn</span><span class="p">,</span> <span class="s2">&quot;clicked&quot;</span><span class="p">,</span> <span class="s2">&quot;Update&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">controllers</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">btn</span><span class="p">,</span> <span class="s2">&quot;clicked&quot;</span><span class="p">,</span> <span class="s2">&quot;Update&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>зарегистрировать группу контролов:</p>
@@ -73,18 +76,24 @@
 <div class="section" id="class-controllers">
 <h2>class Controllers<a class="headerlink" href="#class-controllers" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
-<h3>свойства<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>groups --&gt; dict(name_group=group: QtWidgets.QButtonGroup)</li>
-<li>controls --&gt; dict(name_control=control: QAbstractButton <a href="#id2"><span class="problematic" id="id3">*</span></a>)</li>
-</ul>
-</div>
-<div class="section" id="id4">
-<h3>методы<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>set_app</li>
-<li>register</li>
-<li>register_group</li>
+<h3>методы<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">__init__(self, app, actions_module):</p>
+<blockquote>
+<div><p>actions_module - ссылка на модуль где определены пользовательские действия</p>
+<p>app - ссылка на виджет в который устаналиваем контроллет</p>
+</div></blockquote>
+</li>
+<li><p class="first">set_app</p>
+</li>
+<li><p class="first">register</p>
+</li>
+<li><p class="first">register_group</p>
+</li>
+<li><p class="first">groups &#8211;&gt; dict(name_group=group: QtWidgets.QButtonGroup)</p>
+</li>
+<li><p class="first">controls &#8211;&gt; dict(name_control=control: QAbstractButton <a href="#id2"><span class="problematic" id="id3">*</span></a>)</p>
+</li>
 </ul>
 </div>
 </div>
@@ -128,7 +137,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, zaswed.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.3.
     </div>
   </body>
 </html>

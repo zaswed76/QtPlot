@@ -28,6 +28,9 @@ class Canvas(QtWidgets.QFrame):
     def clear(self):
         self.figure.clear()
 
+    def plot(self, data):
+        print("plot", data)
+
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)

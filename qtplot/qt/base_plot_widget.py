@@ -6,14 +6,8 @@
 """
 
 
-
 import sys
 from PyQt5 import QtWidgets
-from PyQt5 import QtCore
-
-
-from qtplot.qt import canvas
-from qtplot.qt import plt_creator
 
 
 class Controllers():
@@ -21,19 +15,21 @@ class Controllers():
         pass
 
 class BasePlotWidget(QtWidgets.QFrame):
-    def __init__(self):
+    def __init__(self, controllers, canvas, plt_creator):
         super().__init__()
-        self.resize(500, 500)
+        self.controller = controllers
+
         self.box = QtWidgets.QHBoxLayout(self)
         self.btn = QtWidgets.QPushButton("update")
-        self.btn.clicked.connect(self.update_plot)
-        self.box.addWidget(self.btn)
-        self.canvas = canvas.Canvas()
-        self.plt_creator = plt_creator.PlotCreator(self.canvas)
-        self.box.addWidget(self.canvas)
+        # self.controller.register(self.btn, "clicked", "Update")
 
-    def update_plot(self):
-        self.plt_creator.update_plot()
+        self.box.addWidget(self.btn)
+        self.plt_creator = plt_creator
+        self.plt_creator.canvas = canvas
+        self.box.addWidget(canvas)
+
+    def update_canvas(self):
+        self.plt_creator.update_canvas()
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
