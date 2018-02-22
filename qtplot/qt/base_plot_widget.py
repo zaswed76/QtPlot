@@ -32,8 +32,6 @@ class BasePlotWidget(QtWidgets.QFrame):
     def init_tool(self):
 
         self.btn = QtWidgets.QPushButton()
-        self.btn.setIconSize(QtCore.QSize(32, 32))
-        self.btn.setFixedSize(32, 32)
         self.btn.setObjectName("update_btn")
         self.box.insertWidget(0, self.btn)
         self.controller.register(self.btn, "clicked", "Update")

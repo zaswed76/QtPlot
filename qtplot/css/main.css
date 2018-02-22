@@ -4,6 +4,7 @@ MainWidget {
 
 QPushButton#update_btn {
     image: url(:/resource/icons/32/refresh.png);
-    /*background-color: aqua;*/
+    width: 32px;
+    height: 32px;
     border: none;
 }
