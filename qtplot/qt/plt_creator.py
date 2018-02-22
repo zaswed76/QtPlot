@@ -13,9 +13,9 @@ class PlotCreator():
         получить данные
         вызвать метод рисоания  графиков
         """
-        control = self.get_control()
-        query_method = self.query_method(control)
-        plot_method = self.plot_method(control)
+        data_control = self.get_control()
+        query_method = self.query_method(data_control)
+        plot_method = self.plot_method(data_control)
         data = self.get_data(query_method)
         self.create_plot(data, plot_method)
 

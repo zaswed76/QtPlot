@@ -1,3 +1,9 @@
 MainWidget {
-    background-color: #57f346;
+    background-color: #d1d1d1;
+}
+
+QPushButton#update_btn {
+    image: url(:/resource/icons/32/refresh.png);
+    /*background-color: aqua;*/
+    border: none;
 }
