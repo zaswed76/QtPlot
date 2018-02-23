@@ -6,7 +6,7 @@ from matplotlib.figure import Figure
 import matplotlib as mpl
 from PyQt5 import QtGui, QtCore, QtWidgets
 
-from test_qgraph.plot import axis
+from qtplot.plot import axis
 from test_qgraph import message_handler
 
 

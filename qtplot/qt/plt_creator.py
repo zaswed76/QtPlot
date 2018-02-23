@@ -58,8 +58,8 @@ class PlotCreator():
         return
 
     def create_plot(self, data, plot_method):
-        getattr(self, plot_method)(data)
-
+        # getattr(self, plot_method)(data)
+        self.graphic_draw(2, 1, 1)
 
 
     def bar(self, data):
@@ -72,3 +72,13 @@ class PlotCreator():
         Plotter.bar(ax, data2, data1, picker=True, gid=0)
         Plotter.bar(ax, data2, data3, width=0.5, picker=True, gid=1)
         canvas.resize(700, 500)
+
+
+    def graphic_draw(self, naxis, plotter, data):
+        axs = []
+
+        axs.extend(self.canvas.set_axis(naxis))
+        print(axs)
+
+        for ax in axs:
+            ax.bar([1, 2, 3], [1, 2, 3])
