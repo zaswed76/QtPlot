@@ -27,7 +27,7 @@ def main():
     app.setStyleSheet(open(css_path, "r").read())
     main_window = mainwidget.MainWidget()
 
-    main_window.show()
+
 
     canv = canvas.Canvas()
     plt_fabric = plt_creator.PlotCreator()
@@ -37,6 +37,9 @@ def main():
                                                   controller=plot_controllers,)
     plot_widget.init_tool()
     main_window.add_window(plot_widget)
+
+    main_window.show()
+    main_window.resize(700, 500)
 
 
     sys.exit(app.exec_())

@@ -27,7 +27,13 @@ class BasePlotWidget(QtWidgets.QFrame):
 
         self.plt_creator = plt_creator
         self.plt_creator.canvas = canvas
+        self.plt_creator.canvas.canvas.mpl_connect('pick_event', self.on_pick)
         self.box.addWidget(canvas)
+
+    def on_pick(self, e):
+        a = e.artist
+        print(a.get_gid())
+        print(a.get_x() + a.get_width()/2)
 
     def init_tool(self):
 

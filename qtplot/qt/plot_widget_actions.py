@@ -9,4 +9,4 @@ class Update(action.Action):
         self.args = args
 
     def run(self):
-        print(self.app.plt_creator.update_canvas())
+        self.app.plt_creator.update_canvas()
